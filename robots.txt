@@ -6,6 +6,8 @@ Allow: /
 
 # Block access to verification files
 Disallow: /google025b5f4166ff70e7.html
+Disallow: /naver0ade30db6568d6869e397f295ad659dc.html
+Disallow: /yandex_13bf8d3dfd7b136e.html
 
 # Sitemap
 Sitemap: https://photoscale.netlify.app/sitemap.xml
