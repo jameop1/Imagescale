@@ -1,0 +1,33 @@
+# robots.txt — photoscale
+# https://photoscale.netlify.app/
+
+User-agent: *
+Allow: /
+
+# Block access to verification files
+Disallow: /google025b5f4166ff70e7.html
+
+# Sitemap
+Sitemap: https://photoscale.netlify.app/sitemap.xml
+
+# AI / LLM Crawlers — Welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /

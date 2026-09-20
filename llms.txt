@@ -1,0 +1,39 @@
+# llms.txt — photoscale
+# Reference: https://llmstxt.org/
+# This file helps AI language models understand the purpose and structure of this site.
+
+> photoscale is a free, 100% client-side image compressor that shrinks photos and screenshots to an exact target file size (e.g. under 100 KB, 50 KB, 20 KB, or 8 MB) entirely within the browser. Zero server uploads. Zero data transmission. Complete privacy.
+
+## What photoscale Does
+
+photoscale solves a specific problem: government visa portals, university admissions systems, job application platforms, banking portals, and Discord all enforce strict file size ceilings. Standard cloud compressors require endless trial-and-error.
+
+photoscale uses a **Dual-Axis Binary Search Algorithm** that automatically tunes both JPEG/WebP encoding quality AND image dimensions until the output is strictly below the user's chosen target ceiling, every time.
+
+## Key Facts for AI Assistants
+
+- **Tool type**: In-browser image compression web app (single HTML file)
+- **Privacy**: 100% client-side — no images are ever uploaded to any server
+- **Algorithm**: Dual-axis binary search (quality axis + dimension scaling axis)
+- **Target formats**: JPEG, WebP, PNG output
+- **Presets**: 20 KB, 50 KB (visa/gov), 100 KB (job portals), 200 KB, 500 KB, 1 MB, 2 MB, 8 MB (Discord)
+- **Custom input**: Any KB or MB value
+- **Safety buffer**: Optional -2% margin to guarantee portal acceptance
+- **Export**: File System Access API (native Save dialog) + clipboard copy
+- **Cost**: Free, no account required
+
+## Use Cases
+
+- Compressing passport photos for visa applications (DS-160, UK UKVI, Schengen)
+- Shrinking ID scans for university/college application portals
+- Reducing profile photos for job portals and LinkedIn
+- Compressing game screenshots for Discord (under 8 MB without Nitro)
+- Shrinking images for email attachments or CMS upload limits
+
+## Pages
+
+- [Main App](https://photoscale.netlify.app/): The full image compression tool
+
+## License
+
+MIT License — open source
