@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <script>(function(s){s.dataset.zone='11841233',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("photoscale_theme");
+          if (saved === "dark" || saved === "light") {
+            document.documentElement.setAttribute("data-theme", saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog — Image Compression Guides & Tips | photoscale</title>
+    <meta
+      name="description"
+      content="Free guides on how to compress images to exact file sizes for visa forms, IBPS, Discord, and more. All client-side, zero uploads."
+    />
+    <meta name="author" content="PhotoScale" />
+    <link rel="canonical" href="https://photoscale.netlify.app/blog.html" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="photoscale" />
+    <meta
+      property="og:title"
+      content="Blog — Image Compression Guides | photoscale"
+    />
+    <meta
+      property="og:description"
+      content="Practical guides: compress images for visa portals, IBPS, Discord, and more."
+    />
+    <meta
+      property="og:url"
+      content="https://photoscale.netlify.app/blog.html"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-primary: #fbfbf9;
+        --bg-secondary: #f3f1ec;
+        --bg-surface: #ffffff;
+        --text-primary: #0a0a0a;
+        --text-secondary: #4a4a4a;
+        --text-muted: #8e8d88;
+        --border-grid: #e4e2da;
+        --border-strong: #0a0a0a;
+        --accent-black: #0a0a0a;
+        --accent-white: #ffffff;
+        --font-display: "Plus Jakarta Sans", -apple-system, sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+        --transition-smooth: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      [data-theme="dark"] {
+        --bg-primary: #0c0c0e;
+        --bg-secondary: #121316;
+        --bg-surface: #18191d;
+        --text-primary: #f8f7f4;
+        --text-secondary: #a8a7a2;
+        --text-muted: #64635f;
+        --border-grid: #26272d;
+        --border-strong: #f8f7f4;
+        --accent-black: #f8f7f4;
+        --accent-white: #0c0c0e;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: var(--font-display);
+        line-height: 1.5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        -webkit-font-smoothing: antialiased;
+        transition:
+          background-color 0.25s,
+          color 0.25s;
+      }
+      ::selection {
+        background: var(--text-primary);
+        color: var(--bg-primary);
+      }
+      .grid-container {
+        width: 100%;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* NAV */
+      .nav-bar {
+        border-bottom: 1px solid var(--border-grid);
+        background: var(--bg-primary);
+        position: sticky;
+        top: 0;
+        z-index: 90;
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .brand-block {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-decoration: none;
+        color: var(--text-primary);
+      }
+      .brand-mark {
+        width: 24px;
+        height: 24px;
+        border: 2px solid var(--text-primary);
+        display: grid;
+        place-items: center;
+      }
+      .brand-mark::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: var(--text-primary);
+      }
+      .brand-title {
+        font-size: 1.05rem;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .nav-link {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--text-muted);
+        text-decoration: none;
+        padding: 7px 12px;
+        border: 1px solid var(--border-grid);
+        transition: var(--transition-smooth);
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        background: var(--text-primary);
+        color: var(--bg-primary);
+        border-color: var(--text-primary);
+      }
+      .theme-toggle-btn {
+        background: transparent;
+        border: 1px solid var(--border-grid);
+        color: var(--text-primary);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 7px 12px;
+        cursor: pointer;
+        transition: var(--transition-smooth);
+      }
+      .theme-toggle-btn:hover {
+        background: var(--text-primary);
+        color: var(--bg-primary);
+      }
+
+      /* HERO */
+      .blog-hero {
+        padding: 56px 0 40px;
+        border-bottom: 1px solid var(--border-grid);
+      }
+      .blog-kicker {
+        font-family: var(--font-mono);
+        font-size: 0.76rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .blog-kicker::before {
+        content: "—";
+        color: var(--text-primary);
+      }
+      .blog-hero-title {
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .blog-hero-sub {
+        font-size: 1.05rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+      }
+
+      /* GRID */
+      .posts-section {
+        padding: 48px 0 80px;
+        flex: 1;
+      }
+      .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        border: 1px solid var(--border-strong);
+      }
+      @media (max-width: 680px) {
+        .posts-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* CARD — the whole card is a link */
+      .post-card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        border-right: 1px solid var(--border-grid);
+        border-bottom: 1px solid var(--border-grid);
+        background: var(--bg-surface);
+        transition: var(--transition-smooth);
+        position: relative;
+      }
+      .post-card:hover {
+        background: var(--bg-secondary);
+      }
+      .post-card:hover .post-read-more {
+        background: var(--text-primary);
+        color: var(--bg-primary);
+        border-color: var(--text-primary);
+      }
+      .post-card:hover .arrow-icon {
+        transform: translateX(4px);
+      }
+
+      .post-card-header {
+        padding: 20px 28px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .post-number {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+      .post-tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+      .post-tag {
+        font-family: var(--font-mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        border: 1px solid var(--border-grid);
+        padding: 2px 7px;
+        background: var(--bg-secondary);
+      }
+
+      .post-body {
+        padding: 20px 28px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .post-title {
+        font-size: 1.15rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        color: var(--text-primary);
+      }
+      .post-excerpt {
+        font-size: 0.92rem;
+        color: var(--text-secondary);
+        line-height: 1.65;
+      }
+      .post-meta {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        color: var(--text-muted);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .post-read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 6px;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--text-primary);
+        padding: 9px 16px;
+        border: 1px solid var(--border-grid);
+        transition: var(--transition-smooth);
+        align-self: flex-start;
+        background: transparent;
+      }
+      .arrow-icon {
+        transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* FOOTER */
+      .site-footer {
+        border-top: 1px solid var(--border-grid);
+        padding: 20px 0;
+        background: var(--bg-secondary);
+      }
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--text-muted);
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav-bar" aria-label="Main Navigation">
+      <div class="grid-container">
+        <div class="nav-inner">
+          <a href="index.html" class="brand-block" aria-label="photoscale Home">
+            <div class="brand-mark"></div>
+            <span class="brand-title">PHOTO // SCALE</span>
+          </a>
+          <div class="nav-actions">
+            <a href="index.html" class="nav-link">← TOOL</a>
+            <a href="blog.html" class="nav-link active">BLOG</a>
+            <button
+              type="button"
+              class="theme-toggle-btn"
+              id="btn-theme-toggle"
+              aria-label="Toggle Color Theme"
+            >
+              <span id="theme-label-text">CHARCOAL</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="grid-container">
+      <section class="blog-hero">
+        <div class="blog-kicker">COMPRESSION GUIDES</div>
+        <h1><b>PHOTO SCALE - BLOG</b></h1>
+        <p class="blog-hero-sub">
+          Practical guides on compressing photos and images to exact file size
+          limits — for visa forms, IBPS, Discord, and more.
+        </p>
+      </section>
+
+      <section class="posts-section">
+        <div class="posts-grid">
+          <a href="post-1.html" class="post-card">
+            <div class="post-card-header">
+              <span class="post-number">POST // 01</span>
+              <div class="post-tags">
+                <span class="post-tag">Free Tool</span
+                ><span class="post-tag">How-To</span>
+              </div>
+            </div>
+            <div class="post-body">
+              <div class="post-title">
+                Free Image Compressor Online: How to Compress an Image to an
+                Exact Size (50 KB, 100 KB, 8 MB)
+              </div>
+              <p class="post-excerpt">
+                Most online tools make you guess — drag a quality slider,
+                download, check the size, repeat. photoscale runs a two-part
+                search so the file lands strictly under your limit, every time.
+              </p>
+              <div class="post-meta">
+                TAGS: image compressor free · online image compressor · compress
+                image
+              </div>
+              <div class="post-read-more">
+                READ POST <span class="arrow-icon">→</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="post-2.html" class="post-card">
+            <div class="post-card-header">
+              <span class="post-number">POST // 02</span>
+              <div class="post-tags">
+                <span class="post-tag">GDS / IBPS</span
+                ><span class="post-tag">Gov Forms</span>
+              </div>
+            </div>
+            <div class="post-body">
+              <div class="post-title">
+                How to Compress Photo and Signature Images for GDS Online Apply
+                and IBPS Forms
+              </div>
+              <p class="post-excerpt">
+                Application portals are strict — miss the limit by even a single
+                byte and the upload fails. Learn how to compress your photo and
+                signature to the exact required KB ceiling.
+              </p>
+              <div class="post-meta">
+                TAGS: gds online apply · ibps · jpg image compressor · photo
+                compressor
+              </div>
+              <div class="post-read-more">
+                READ POST <span class="arrow-icon">→</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="post-3.html" class="post-card">
+            <div class="post-card-header">
+              <span class="post-number">POST // 03</span>
+              <div class="post-tags">
+                <span class="post-tag">Comparison</span
+                ><span class="post-tag">Alternatives</span>
+              </div>
+            </div>
+            <div class="post-body">
+              <div class="post-title">
+                Caesium Image Compressor Alternative: A Browser-Based Photo
+                Compressor With Exact Size Targeting
+              </div>
+              <p class="post-excerpt">
+                Caesium is great for bulk offline jobs. But when you're on a
+                deadline and need a file strictly under a hard limit — without
+                installing anything — a browser-based tool wins.
+              </p>
+              <div class="post-meta">
+                TAGS: caesium image compressor · photo compressor · jpg image
+                compressor
+              </div>
+              <div class="post-read-more">
+                READ POST <span class="arrow-icon">→</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="post-4.html" class="post-card">
+            <div class="post-card-header">
+              <span class="post-number">POST // 04</span>
+              <div class="post-tags">
+                <span class="post-tag">Explainer</span
+                ><span class="post-tag">PDF Workflow</span>
+              </div>
+            </div>
+            <div class="post-body">
+              <div class="post-title">
+                Image Resizer vs Image Compressor: What's the Difference (and
+                How to Make PDFs Smaller Too)
+              </div>
+              <p class="post-excerpt">
+                Resize changes pixels. Compress changes file weight. Choosing
+                wrong leaves you with a blurry image or a file that's still too
+                big. Here's how to pick — and how to shrink PDFs too.
+              </p>
+              <div class="post-meta">
+                TAGS: image resizer · image to pdf · pdf compressor · compress
+                image
+              </div>
+              <div class="post-read-more">
+                READ POST <span class="arrow-icon">→</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="grid-container">
+        <div class="footer-inner">
+          <span>photoscale // PRECISION OPTICAL TOOLING &copy; 2026</span>
+          <span>ZERO UPLOADS · PURE CLIENT-SIDE</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const htmlEl = document.documentElement;
+        const btn = document.getElementById("btn-theme-toggle");
+        const label = document.getElementById("theme-label-text");
+
+        function updateLabel(theme) {
+          if (label) {
+            label.textContent = theme === "light" ? "CHARCOAL" : "BONE WHITE";
+          }
+        }
+
+        updateLabel(htmlEl.getAttribute("data-theme") || "light");
+
+        if (!btn) return;
+        btn.addEventListener("click", () => {
+          const next =
+            htmlEl.getAttribute("data-theme") === "light" ? "dark" : "light";
+          htmlEl.setAttribute("data-theme", next);
+          try {
+            localStorage.setItem("photoscale_theme", next);
+          } catch (e) {}
+          updateLabel(next);
+        });
+      })();
+    </script>
+  </body>
+</html>

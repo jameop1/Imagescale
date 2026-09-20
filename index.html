@@ -3,6 +3,17 @@
   <head>
     <script>
       (function (s) {
+        ((s.dataset.zone = "11843590"),
+          (s.src = "https://n6wxm.com/vignette.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
+    <script>
+      (function (s) {
         ((s.dataset.zone = "11841233"),
           (s.src = "https://nap5k.com/tag.min.js"));
       })(
@@ -28,6 +39,16 @@
       data-cfasync="false"
       async
     ></script>
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("photoscale_theme");
+          if (saved === "dark" || saved === "light") {
+            document.documentElement.setAttribute("data-theme", saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Primary SEO Meta Tags -->
@@ -162,7 +183,9 @@
             "inLanguage": "en-US",
             "isPartOf": { "@id": "https://photoscale.netlify.app/#webapp" },
             "about": { "@id": "https://photoscale.netlify.app/#webapp" },
-            "publisher": { "@id": "https://photoscale.netlify.app/#organization" },
+            "publisher": {
+              "@id": "https://photoscale.netlify.app/#organization"
+            },
             "datePublished": "2026-09-19",
             "dateModified": "2026-09-20"
           },
@@ -172,7 +195,9 @@
             "name": "How to Compress an Image to an Exact File Size (Under 100 KB, 50 KB)",
             "description": "Step-by-step guide to compressing any photo or screenshot to a strict target file size ceiling using photoscale — 100% in-browser with zero uploads.",
             "totalTime": "PT30S",
-            "tool": [{ "@type": "HowToTool", "name": "photoscale (free browser tool)" }],
+            "tool": [
+              { "@type": "HowToTool", "name": "photoscale (free browser tool)" }
+            ],
             "step": [
               {
                 "@type": "HowToStep",
@@ -1872,6 +1897,31 @@
               <span>100% IN-BROWSER</span>
             </div>
 
+            <a
+              href="blog.html"
+              style="
+                font-family: var(--font-mono);
+                font-size: 0.72rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                color: var(--text-muted);
+                text-decoration: none;
+                padding: 7px 12px;
+                border: 1px solid var(--border-grid);
+                transition: var(--transition-smooth);
+              "
+              onmouseover="
+                this.style.background = 'var(--text-primary)';
+                this.style.color = 'var(--bg-primary)';
+              "
+              onmouseout="
+                this.style.background = 'transparent';
+                this.style.color = 'var(--text-muted)';
+              "
+              >BLOG</a
+            >
+
             <button
               type="button"
               class="theme-toggle-btn"
@@ -1890,7 +1940,7 @@
       <!-- Hero Section -->
       <section class="hero-zone">
         <div class="hero-meta-kicker">OPTICAL COMPRESSION ENGINE</div>
-        <h1 class="hero-display-h1">EXACT SIZE.<br />ZERO UPLOAD.</h1>
+        <h1 class="hero-display-h1">PHOTO SCALE.<br />ZERO UPLOAD.</h1>
         <div class="hero-lead-row">
           <p class="hero-summary">
             Shrink photographs, documents, and screen captures strictly beneath
@@ -2782,9 +2832,17 @@
         const btnModalDismiss = document.getElementById("btn-modal-dismiss");
 
         // --- THEME TOGGLE (BONE WHITE / STARK CHARCOAL) ---
+        state.theme = htmlEl.getAttribute("data-theme") || "light";
+        if (themeLabelText) {
+          themeLabelText.textContent = state.theme === "light" ? "CHARCOAL" : "BONE WHITE";
+        }
+
         btnThemeToggle.addEventListener("click", () => {
           state.theme = state.theme === "light" ? "dark" : "light";
           htmlEl.setAttribute("data-theme", state.theme);
+          try {
+            localStorage.setItem("photoscale_theme", state.theme);
+          } catch (e) {}
           themeLabelText.textContent =
             state.theme === "light" ? "CHARCOAL" : "BONE WHITE";
         });
@@ -3519,7 +3577,11 @@
           }
         }
 
-        btnDownload.addEventListener("click", executeDownload);
+        btnDownload.addEventListener("click", () => {
+          // Ad redirect — opens in new tab without blocking download
+          window.open("https://omg10.com/4/11843670", "_blank", "noopener");
+          executeDownload();
+        });
 
         btnViewTab.addEventListener("click", () => {
           if (!state.compressedURL) return;
