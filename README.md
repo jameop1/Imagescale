@@ -1,4 +1,4 @@
-# ExactSize — Precision In-Browser Image Compressor to Exact File Limit
+# Photoscale — Precision In-Browser Image Compressor to Exact File Limit
 
 > **Shrink screenshots and photos strictly under target limits (e.g. 100 KB, 50 KB, 20 KB, 8 MB) directly in the browser. Zero server uploads, 100% privacy, and instant visual feedback.**
 
@@ -12,7 +12,7 @@
 
 When government visa portals, university submission systems, job boards, Discord (without Nitro), or banking sites reject uploads with strict limits like *"must be under 100 KB"*, standard cloud compressors require endless trial-and-error.
 
-**ExactSize** solves this with an autonomous **Dual-Axis Binary Search Algorithm** executed entirely within local device memory via HTML5 Canvas. It automatically tunes compression quality and dimensions until the output strictly satisfies the target ceiling without sacrificing visual clarity.
+**Photoscale** solves this with an autonomous **Dual-Axis Binary Search Algorithm** executed entirely within local device memory via HTML5 Canvas. It automatically tunes compression quality and dimensions until the output strictly satisfies the target ceiling without sacrificing visual clarity.
 
 ---
 
@@ -46,7 +46,7 @@ When government visa portals, university submission systems, job boards, Discord
 
 ## 🚀 Quick Start
 
-ExactSize is completely self-contained in a single static HTML file with no build steps, Node.js runtime, or external dependencies required.
+Photoscale is completely self-contained in a single static HTML file with no build steps, Node.js runtime, or external dependencies required.
 
 ### Run Locally
 Simply open `index.html` in any modern web browser, or serve with any local HTTP daemon:
